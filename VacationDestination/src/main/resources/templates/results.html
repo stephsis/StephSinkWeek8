@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Passengers</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentPassenger : ${passengers}" >
+<td th:text="${currentPassenger.id}" />
+ <td th:text="${currentPassenger.lastName}" />
+ <td th:text="${currentPassenger.firstName}" />
+ <td th:text="${currentPassenger.phoneNumber}" />
+ <td th:text="${currentPassenger.age}" />
+ <td th:text="${currentPassenger.destination.country}" />
+ <td th:text="${currentPassenger.destination.state}" />
+</tr>
+</table>
+</form>
+<a href="../inputPassenger">Add a new passenger</a>
+</body>
+</html>
